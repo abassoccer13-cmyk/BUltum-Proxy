@@ -1,5 +1,5 @@
 {
   "name": "bultum-proxy",
   "version": "1.0.0",
-  "description": "Proxy server for Bultum Hub AI features"
+  "type": "module"
 }
