@@ -13,7 +13,7 @@ export default async function handler(req, res) {
 
   const key = process.env.ANTHROPIC_API_KEY;
   if (!key) {
-    return res.status(500).json({ error: 'API key not configured on server' });
+    return res.status(500).json({ error: 'API key not configured — check Vercel environment variables' });
   }
 
   try {
@@ -21,7 +21,7 @@ export default async function handler(req, res) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': key,
+        'x-api-key': key.trim(),
         'anthropic-version': '2023-06-01'
       },
       body: JSON.stringify(req.body)
